@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人網站 - PDF 文件展示</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        .pdf-container {
+            margin-top: 20px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        iframe {
+            width: 80%;
+            height: 600px;
+            display: none;
+            margin-top: 20px;
+            border: 2px solid #333;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>我的 PDF 文件展示</h1>
+
+    <div class="pdf-container">
+        <button onclick="togglePDF('pdf1')">展開第一份 PDF</button>
+        <iframe id="pdf1" src="https://drive.google.com/file/d/1-4voySmY8GYe_TzjNpoCXL0vnOut5TAs/preview"></iframe>
+    </div>
+
+    <div class="pdf-container">
+        <button onclick="togglePDF('pdf2')">展開第二份 PDF</button>
+        <iframe id="pdf2" src="https://drive.google.com/file/d/1--Gog-hfQtIrAHd4_VNZwujyo9BpnkCR/preview"></iframe>
+    </div>
+
+    <footer>
+        <p>© 2024 個人網站. 保留所有權利.</p>
+    </footer>
+
+    <script>
+        function togglePDF(pdfId) {
+            var iframe = document.getElementById(pdfId);
+            if (iframe.style.display === "none") {
+                iframe.style.display = "block";
+            } else {
+                iframe.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
